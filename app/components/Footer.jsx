@@ -1,9 +1,7 @@
 import React from 'react'
 
 const Footer = () => {
-  return (
-    <div>@2023</div>
-  )
+  return <footer className='py-6 text-center text-[#FFFBEB] bg-[#251749]'>&copy;2023</footer>
 }
 
 export default Footer

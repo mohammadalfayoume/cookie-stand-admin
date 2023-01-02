@@ -1,71 +1,63 @@
-import React, {useState} from 'react'
-
-const Form = () => {
-    const [location, setLocation]= useState("")
-    const [minimum, setMinimum]= useState("")
-    const [maximum, setMaximum]= useState("")
-    const [average, setAverage]= useState("")
-    const [results, setResults]= useState([])
-    
-    const locationHandleChange=(event)=>{
-        setLocation(event.target.value)
-    }
-    const minimumHandleChange=(event)=>{
-        setMinimum(event.target.value)
-    }
-    const maximumHandleChange=(event)=>{
-        setMaximum(event.target.value)
-    }
-    const averageHandleChange=(event)=>{
-        setAverage(event.target.value)
-    }
-
-    const formHandler=(event)=>{
-        event.preventDefault()
-        // console.log("submit")
-        let obj={
-            "location": location || "Empty !!",
-            "minimum": minimum || "Empty !!",
-            "maximum": maximum || "Empty !!",
-            "average": average || "Empty !!",
-        }
-        setResults([...results,obj])
-    }
-    
+const Form = (props) => {
   return (
-    <div>
-        <form onSubmit={formHandler}>
-            <label>Location: </label>
-            <input type="text" name="location" id={location} onChange={locationHandleChange}/>
-            <section>
-                <div>
-                    <label>Minimum Customers per Hour</label><br/>
-                    <input type="text" name="minimum" onChange={minimumHandleChange}/>
-                </div>
-                <div>
-                    <label>Maximum Customers per Hour</label><br/>
-                    <input type="text" name="maximum" onChange={maximumHandleChange}/>
-                </div>
-                <div>
-                    <label>Average Cookies per Sale</label><br/>
-                    <input type="text" name="average" onChange={averageHandleChange}/>
-                </div>
-            </section>
-            <section>
-                <input type="submit" value="Create"/>
-            </section>
-        </form>
-        <div>
-            {results.map((item,idx)=>{
-                return (
-                    <div key={idx}>
-                        <h5>`"location":"{item.location}", "minCustomers":"{item.minimum}", "maxCustomers":"{item.maximum}", "avgCookies":"{item.average}"`</h5>
-                    </div>
-                    // <div>`location: {item.location}`</div>
-                )
-            })}
+    <>
+      <form onSubmit={props.allInfo}>
+        <div className='flex flex-col items-center gap-5 p-5 text-center  border-[#251749] border-2 shadow-md rounded mx-20  my-10 text-white'>
+          <label
+            for='location'
+            className='text-center font-semibold text-[#251749]'
+          >
+            Location
+          </label>
+          <input
+            type='text'
+            id='location'
+            name='location'
+            placeholder='Your location..'
+            className='text-center bg-[#495579]  rounded border border-[#251749]'
+          />
+
+          <label for='min' className='text-center font-semibold text-[#251749]'>
+            Minumim Customer/hr
+          </label>
+          <input
+            type='text'
+            id='min'
+            name='min'
+            placeholder='Minumim ..'
+            className='text-center bg-[#495579] rounded border border-[#251749]'
+          />
+
+          <label for='max' className='text-center font-semibold text-[#251749]'>
+            Maxumim Customer/hr
+          </label>
+          <input
+            type='text'
+            id='max'
+            name='max'
+            placeholder='Maxumim..'
+            className='text-center bg-[#495579] text-red rounded border border-[#251749]'
+          />
+
+          <label for='min' className='text-center font-semibold text-[#251749]'>
+          Average Customer/hr
+          </label>
+          <input
+            type='text'
+            id='avg'
+            name='avg'
+            placeholder='average..'
+            className='text-center bg-[#495579] rounded border border-[#251749]'
+          />
+
+          <input
+            type='submit'
+            value='Create'
+            class='bg-transparent hover:bg-[#251749] text-black font-semibold hover:text-white py-2 px-4 border border-[#251749] hover:border-transparent rounded'
+          />
         </div>
-    </div>
+      </form>
+    </>
   )
 }
 
