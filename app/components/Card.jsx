@@ -6,6 +6,7 @@ const Card = (props) => {
     <>
       <div className='m-5 grid grid-cols-3 grid-flow-row gap-4'>
         {props.result.map((item) => {
+          if (item.location==="Empty") return ""
           return (
             <div class='max-w-sm rounded overflow-hidden shadow-lg border-[#251749] border-2 '>
               <Image
@@ -30,11 +31,14 @@ const Card = (props) => {
         })}
       </div>
       {props.result.length == 0 && (
-        <div className="items-center'">
-          <p className=' font-bold text-[#251749] text-3xl text-center m-4'>
-            No cookies
-          </p>
+        <div className="items-center">
+          <h2 className=' font-bold text-[#251749] text-3xl text-center m-4'>
+          No Cookie Stands Available
+          </h2>
+          <div class='flex justify-center mb-5'>
           <Image src='/assets/wait.gif' width={500} height={500} />
+          </div>
+          
         </div>
       )}
     </>

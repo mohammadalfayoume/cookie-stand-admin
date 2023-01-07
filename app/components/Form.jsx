@@ -2,7 +2,7 @@ const Form = (props) => {
   return (
     <>
       <form onSubmit={props.allInfo}>
-        <div className='flex flex-col items-center gap-5 p-5 text-center  border-[#251749] border-2 shadow-md rounded mx-20  my-10 text-white'>
+        <div className='flex flex-col items-center gap-5 p-5 text-center border-[#251749] border-2 shadow-md rounded w-1/5 mx-auto my-5 text-white'>
           <label
             for='location'
             className='text-center font-semibold text-[#251749]'
