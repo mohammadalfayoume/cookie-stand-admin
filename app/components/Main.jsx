@@ -31,21 +31,21 @@ export default function Main() {
     setflag(true)
   }
   return (
-    <>
+    <div class='bg-[#FFFBEB] dark:bg-[#251749]'>
       <div class='flex justify-center mt-5'>
         <button
-          class='bg-transparent hover:bg-[#251749] text-black font-semibold hover:text-white py-2 px-4 border border-[#251749] hover:border-transparent rounded'
+          class='bg-transparent hover:bg-[#251749] dark:hover:bg-[#FFFBEB] dark:bg-[#251749] dark:text-[#FFFBEB] text-[#251749] font-semibold dark:hover:text-[#251749] hover:text-[#FFFBEB] py-2 px-4 border dark:border-[#FFFBEB] border-[#251749] hover:border-transparent rounded mt-5'
           onClick={handleOverview}
         >
           Overview
         </button>
       </div>
 
-      <main className='bg-[#FFFBEB] flex flex-col justify-between gap-3'>
+      <div className='bg-[#FFFBEB] dark:bg-[#251749] flex flex-col justify-between gap-3'>
         <Form allInfo={submitFuction} />
 
         {flag ? <ReportTable /> : <Card result={result} />}
-      </main>
-    </>
+      </div>
+    </div>
   )
 }
