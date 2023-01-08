@@ -8,7 +8,7 @@ const Card = (props) => {
         {props.result.map((item) => {
           if (item.location==="Empty") return ""
           return (
-            <div class='max-w-sm rounded overflow-hidden shadow-lg border-[#251749] border-2 '>
+            <div class='max-w-sm rounded overflow-hidden shadow-lg border-[#251749] bg-[#FFFBEB] dark:bg-[#FFFBEB] border-2 '>
               <Image
                 src='/assets/cookie.png'
                 width={300}
@@ -32,7 +32,7 @@ const Card = (props) => {
       </div>
       {props.result.length == 0 && (
         <div className="items-center">
-          <h2 className=' font-bold text-[#251749] text-3xl text-center m-4'>
+          <h2 className=' font-bold text-[#251749] text-3xl text-center m-4 dark:text-[#FFFBEB]'>
           No Cookie Stands Available
           </h2>
           <div class='flex justify-center mb-5'>

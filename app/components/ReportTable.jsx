@@ -28,7 +28,7 @@ const ReportTable = () => {
   
   return (
     <>
-      <table class="text-left bg-[#495579] border-separate mb-10 mx-5">
+      <table class="text-left bg-[#495579] dark:bg-[#FFFBEB] border-separate mb-10 mx-5">
         <thead class="text-xs uppercase bg-[#251749] text-[#FFFBEB]">
           <tr >
             <th class="px-6 py-3">Location</th>
@@ -44,9 +44,9 @@ const ReportTable = () => {
               <tr>
                 <td class="px-6 py-3 bg-[#251749] text-[#FFFBEB]">{item.location}</td>
                 {Object.values(item.time_sale).map((s) => {
-                  return <td class="px-6 py-3 text-[#FFFBEB]">{s}</td>
+                  return <td class="px-6 py-3 text-[#FFFBEB] dark:text-[#251749]">{s}</td>
                 })}
-                <td class="px-6 py-3 text-[#FFFBEB]">{calculate_total_sale_per_city(Object.values(item.time_sale))}</td>
+                <td class="px-6 py-3 text-[#FFFBEB] dark:text-[#251749]">{calculate_total_sale_per_city(Object.values(item.time_sale))}</td>
               </tr>
             )
           })}
@@ -56,12 +56,12 @@ const ReportTable = () => {
             <td class="px-6 py-3 bg-[#251749] text-[#FFFBEB]" >Totals</td>
             {time.map((item) => {
               return (
-                <td class="px-6 py-3 text-[#FFFBEB]">
+                <td class="px-6 py-3 text-[#FFFBEB] dark:text-[#251749]">
                   {calculate_total_sale_per_time(item)}
                 </td>
               )
             })}
-            <td class="px-6 py-3 text-[#FFFBEB]">
+            <td class="px-6 py-3 text-[#FFFBEB] dark:text-[#251749]">
                 {tot()}
             </td>
           </tr>
